@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>승리의 여신 공략 모음</title>
+  <!-- 예쁜 폰트/스타일 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/static/pretendard.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/suit-webfont@latest/suit.min.css"/>
+  <style>
+    :root {
+      --main-bg: #23283c;
+      --sidebar-bg: rgba(34,36,65,0.96);
+      --sidebar-active: #fcf6fb;
+      --sidebar-inactive: #c5b5edab;
+      --sidebar-border: #b7abdd55;
+      --content-bg: rgba(252,246,247, 0.92);
+      --content-backdrop: blur(13px);
+      --content-box: #fcf8ffcc;
+      --content-title: linear-gradient(87deg,#b67bee 30%,#7dcfff 110%);
+      --border-rad: 22px;
+      --shadow: 0 8px 48px #8b8ee222, 0 2px 8px #b6c3f733;
+      --header-font: 'SUIT', 'Pretendard', 'Noto Sans KR', sans-serif;
+      --body-font: 'Pretendard', 'Noto Sans KR', 'SUIT', sans-serif;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--main-bg);
+      font-family: var(--body-font);
+      color: #23233A;
+      letter-spacing: -0.01em;
+      box-sizing: border-box;
+    }
+    .home-bgimg-titlebox {
+      position: relative;
+      width: 100vw;
+      max-width: 980px;
+      margin: 0 auto 6px auto;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px #23233c28;
+      background: #222 center/cover no-repeat;
+    }
+    .home-bgimg-titlebox img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.94;
+      filter: brightness(0.97) saturate(1.08);
+      border-radius: 18px;
+    }
+    .main-image-overlay {
+      position: absolute; top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(110deg, #6ecaff99 10%, #ba7cff33 90%);
+      border-radius: 18px;
+      z-index: 1;
+    }
+    .main-image-title-text {
+      position: absolute;
+      top: 15%; left: 50%; transform: translate(-50%, 0);
+      font-family: 'SUIT','Pretendard','Noto Sans KR',sans-serif;
+      font-size: 2.25em; font-weight: 900; letter-spacing:0.025em;
+      background: linear-gradient(80deg, #b67bee 30%, #7dcfff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; text-fill-color: transparent;
+      filter: drop-shadow(0 2px 8px #fff6);
+      padding: 8px 36px;
+      z-index:2; white-space:nowrap;
+      text-shadow: 0 2px 21px #fff3, 0 1px 1px #9c7fff4f;
+      opacity: 0.98;
+    }
+    .main-image-credits {
+      position: absolute; bottom: 18px; left: 50%; transform: translate(-50%, 0);
+      color: #ece6ff;
+      background: rgba(60,49,108,.23);
+      border-radius: 12px;
+      padding:7px 17px 6px 17px;
+      z-index: 2;
+      font-family: 'SUIT','Pretendard','Noto Sans KR',sans-serif;
+      box-shadow: 0 4px 16px #2a21432e;
+      font-size:1.01em; font-weight: 600; letter-spacing: 0.02em;
+      text-shadow: 0 1.5px 9px #fff7;
+    }
+    .top-notice {
+      max-width: 880px;
+      margin: 22px auto 14px auto;
+      border-radius: 15px;
+      background: #352453e8;
+      color: #f7f3ff;
+      font-size: 1.15em;
+      font-family: var(--header-font);
+      font-weight: 900;
+      letter-spacing: 0.017em;
+      box-shadow: 0 1px 13px #b7afd738;
+      line-height: 1.77;
+      padding: 18px 23px 14px 23px;
+      text-align: center;
+      border: 2.5px solid #ae81ff70;
+      text-shadow: 0 2px 9px #30155388, 0 1px 1px #d7b7ff96;
+    }
+    .container {
+      display: flex;
+      min-height: 72vh;
+      padding-bottom: 42px;
+      margin-top: -12px;
+    }
+    .sidebar {
+      background: var(--sidebar-bg);
+      width: 195px;
+      min-width: 120px;
+      max-width: 222px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 8px 0 30px #242a3c33;
+      padding: 36px 0 36px 0;
+      border-top-right-radius: var(--border-rad);
+      border-bottom-right-radius: var(--border-rad);
+      border-right: 1px solid var(--sidebar-border);
+      gap: 2px;
+    }
+    .sidebar button {
+      background: none;
+      color: var(--sidebar-inactive);
+      border: none;
+      text-align: left;
+      padding: 16px 20px 16px 36px;
+      cursor: pointer;
+      font-size: 1.06em;
+      font-family: var(--header-font);
+      font-weight: bold;
+      border-radius: 0 15px 15px 0;
+      transition: background .16s, color .18s;
+      outline: none;
+      position: relative;
+      margin-bottom: 0;
+    }
+    .sidebar button:hover,
+    .sidebar .active {
+      background: linear-gradient(90deg,#e6e2ff 15%,#fff9 94%);
+      color: #7a4fe7;
+    }
+    .sidebar .active::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 16%; bottom: 16%;
+      width: 5px;
+      border-radius: 4px;
+      background: var(--content-title);
+      filter: blur(0.4px);
+    }
+    .content {
+      flex: 1;
+      padding: 44px 5vw 38px 4vw;
+      background: var(--content-bg);
+      backdrop-filter: var(--content-backdrop);
+      -webkit-backdrop-filter: var(--content-backdrop);
+      border-radius: var(--border-rad);
+      margin: 38px 48px 24px 0;
+      box-shadow: var(--shadow);
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    h2 {
+      background: linear-gradient(87deg,#b67bee 30%,#7dcfff 110%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      font-family: var(--header-font);
+      font-size: 1.7em;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+    .section {
+      display: none;
+      animation: fadein .32s;
+    }
+    .section.active {
+      display: block;
+    }
+    @keyframes fadein {
+      from { opacity:0; transform: translateY(18px);}
+      to { opacity:1; transform: translateY(0);}
+    }
+    .guide-card {
+      background: var(--content-box);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 18px;
+      padding: 24px 22px 20px 22px;
+      margin-bottom: 19px;
+      box-shadow: 0 1.5px 24px #beafed18;
+      font-family: var(--body-font);
+      color: #23233A;
+      line-height: 1.68;
+      font-size: 1.06em;
+      position: relative;
+      border: 1px solid #e6e2fa55;
+    }
+    .guide-card strong { color: #7a4fe7; }
+    .guide-card ul, .guide-card ol { margin: 0.5em 0 0.5em 1.2em; }
+    .guide-card em { color: #e15484; }
+    .guide-card .tag {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffe2eb 10%, #b4ebff 90%);
+      color: #9444d5;
+      font-weight: 700;
+      font-size: 0.95em;
+      padding: 2px 10px;
+      border-radius: 7px;
+      margin-right: 7px;
+      letter-spacing: 0.01em;
+    }
+    .tier-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 0 auto;
+      background: #f6f6ffec;
+      border-radius: 17px;
+      box-shadow: 0 1.5px 12px #e0e7ff18;
+    }
+    .tier-table th, .tier-table td {
+      padding: 18px 9px 18px 9px;
+      text-align: center;
+      border: none;
+      vertical-align: top;
+    }
+    .tier-table th {
+      font-weight: 900;
+      font-size: 1.12em;
+      letter-spacing: 0.01em;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background: linear-gradient(87deg,#b67bee33 30%,#e4fcfc44 110%);
+      color: #5b378a;
+    }
+    .tier-table td {
+      min-width: 172px;
+      background: #fff9fcbb;
+      border-radius: 5px;
+    }
+    .hero-cell {
+      display: block;
+      background: #fff9fcff;
+      border-radius: 13px;
+      box-shadow: 0 1px 9px #ddcef947;
+      padding: 10px 10px 8px 10px;
+      margin: 7px auto 8px auto;
+      font-size: 1em;
+      color: #6847b0;
+      font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+      min-width: 110px;
+      min-height: 110px;
+      text-align:center;
+      line-height:1.41;
+    }
+    .hero-img {
+      width: 62px;
+      height: 62px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 4px;
+      background: #efeef6;
+      border: 2.5px solid #e6dcfa;
+      box-shadow:0 2px 8px #7dcfff1a;
+    }
+    .guide-chat {
+      padding: 22px 18px; border-radius: 13px;
+      font-size: 1.08em; background: linear-gradient(100deg, #f3f8ff 60%, #e9d2ffb0 100%);
+      box-shadow: 0 2px 12px #d3c1ff11; margin-top:18px; margin-bottom:18px;
+      display: inline-block;
+    }
+    .guide-chat a {
+      color: #7a4fe7; text-decoration: none; font-weight: bold;
+      transition: color .17s;
+    }
+    .guide-chat a:hover { color:#f56995;}
+    @media (max-width:920px) {
+      .container{margin-right:0;}
+      .sidebar{padding:22px 0;}
+      .content{margin:19px 5vw 12px 0;}
+    }
+    @media (max-width: 750px) {
+      .home-bgimg-titlebox { height:130px; margin-bottom:3px; }
+      .main-image-title-text { font-size:1.2em; padding:4px 15px; }
+      .main-image-credits { font-size:0.83em; padding:4px 8px;}
+      .container { flex-direction: column; margin-top: -13px;}
+      .sidebar { flex-direction: row; width: 100vw; min-width: unset; max-width: 100vw; height: 67px; padding: 0 0 0 4px; overflow-x: auto; border-radius: 0 0 var(--border-rad) var(--border-rad); box-shadow: none; border-right:none; gap:0;}
+      .sidebar button { padding: 9px 7px 9px 13px; font-size: 0.97em;}
+      .content { padding: 14px 5vw 18px 5vw; margin:13px 0 7px 0;}
+      .tier-table th, .tier-table td {padding:7px 2px;}
+      .hero-cell {font-size:0.93em;min-width:75px;}
+      .hero-img {width:42px;height:42px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="home-bgimg-titlebox">
+    <img src="https://i.ibb.co/mVhPF5k/bg.jpg" alt="홈 일러스트">
+    <div class="main-image-overlay"></div>
+    <div class="main-image-title-text">승리의 여신 공략 모음</div>
+    <div class="main-image-credits">made by sg (s37) · 도움주신 분: 데네브 (s7), 하츄핑 (s2)</div>
+  </div>
+  <div class="top-notice">
+    <span>스킨 적용된 일러스트 사진이라 실제 사진과 다를 수 있습니다.<br>
+    덱 티어는 과금 여부와 업데이트에 따라 달라질 수 있습니다.</span>
+  </div>
+  <div class="container">
+    <nav class="sidebar">
+      <button class="active" onclick="showSection(0)">캐릭터 티어표</button>
+      <button onclick="showSection(1)">초반 육성 공략</button>
+      <button onclick="showSection(2)">룬 추천</button>
+      <button onclick="showSection(3)">📣 초보/뉴비 패키지 추천</button>
+      <button onclick="showSection(4)">덱 구성 공략</button>
+      <button onclick="showSection(5)">자원수급 공략</button>
+      <button onclick="showSection(6)">이벤트 공략</button>
+      <button onclick="showSection(7)">단톡방 바로가기</button>
+    </nav>
+    <section class="content">
+      <!-- 캐릭터 티어표 (지원~D까지) -->
+      <div class="section active">
+        <h2>지원 (서포트) 캐릭터 티어</h2>
+        <div class="guide-card" style="overflow-x:auto;">
+          <table class="tier-table">
+            <tr>
+              <th>지원</th>
+              <th>SS</th>
+              <th>S</th>
+              <th>A</th>
+              <th>B</th>
+              <th>C</th>
+              <th>D</th>
+              <th>미출시</th>
+            </tr>
+            <tr>
+              <td>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/21pSsQX/niklas.jpg" class="hero-img" alt="니클라스"><br>
+                  니클라스<br>
+                  <span style="font-size:0.98em;">지원 0티어. 있으면 무조건 넣자.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/yckKVz6/lorelei.jpg" class="hero-img" alt="로렐라이"><br>
+                  로렐라이<br>
+                  <span style="font-size:0.98em;">지원 버프가 221렙부터 켜진다. 2파티나 니클라스가 없을 경우 사용.</span>
+                </div>
+              </td>
+              <td>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/ZRtm1fz/nidhogg.jpg" class="hero-img" alt="니드호그"><br>
+                  니드호그<br>
+                  <span style="font-size:0.98em;">슈사쿠와 제시카가 출시하고 나면 조금 밀리긴 하나 키울 가치는 높다.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/FbQ79mk/aurora.jpg" class="hero-img" alt="오로라"><br>
+                  오로라<br>
+                  <span style="font-size:0.98em;">키우면 1년 쓴다. 0순위로 키울 것.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/3ywvHgj/tsubasa.jpg" class="hero-img" alt="신지 츠바사"><br>
+                  신지 츠바사<br>
+                  <span style="font-size:0.98em;">키우면 오래 쓴다. 튼튼한데 딜까지 잘함.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/7thhFbK/flo.jpg" class="hero-img" alt="플로"><br>
+                  플로<br>
+                  <span style="font-size:0.98em;">빛어둠 중에선 키우기 쉬운 편인데 진형 파괴력이 높다. 튼튼한건 덤</span>
+                </div>
+              </td>
+              <td>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/xS8P82V/watake.jpg" class="hero-img" alt="와타케"><br>
+                  와타케<br>
+                  <span style="font-size:0.98em;">안 키운 상태에서도 버프량이 높은 편이고, 집어넣으면 영혼 연결 효과로 파티 안정성이 크게 증가. 수급처가 현재로선 마땅치 않음.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/RTcHrCw/epsilon.jpg" class="hero-img" alt="앱실론"><br>
+                  앱실론<br>
+                  <span style="font-size:0.98em;">스택형 딜러라 후반갈수록 세지는데 역시나 수급처가 마땅치 않다.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/cKZC2nJ/sigrdrifa.jpg" class="hero-img" alt="시그드리파"><br>
+                  시그드리파<br>
+                  <span style="font-size:0.98em;">초반 공버프 20초로 빠르게 적을 정리하는 덱에 쓰기 좋음. 그런 덱이 많진 않음.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/wFJQGrg/dante.jpg" class="hero-img" alt="단테"><br>
+                  단테<br>
+                  <span style="font-size:0.98em;">전형적인 강약약강. 남이 쓰면 센데 내가 쓰면 약하다. 쓸만은 하다.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/Hf9YhWM/lavis.jpg" class="hero-img" alt="라뷔스"><br>
+                  라뷔스<br>
+                  <span style="font-size:0.98em;">3원소 코어 캐릭터. 초중반 가릴 것 없이 센 위력을 자랑.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/j9PGhNR/nyord.jpg" class="hero-img" alt="뇨르드"><br>
+                  뇨르드<br>
+                  <span style="font-size:0.98em;">3원소 코어. 라뷔스만큼 딜은 약하나, 은근 튼튼하고 빙결 변수 큼.</span>
+                </div>
+              </td>
+              <td>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/tMQJMkg/nia.jpg" class="hero-img" alt="니아"><br>
+                  니아<br>
+                  <span style="font-size:0.98em;">초반 애매한 탱커 자리 보충에 좋아 수급도 쉬움.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/MyQzYtD/jinui.jpg" class="hero-img" alt="진의"><br>
+                  진의<br>
+                  <span style="font-size:0.98em;">앞열 충분할 때 채용하는 후열, 수급 쉽고 활용 용이.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/DDtRNY0/yuhee.jpg" class="hero-img" alt="유희"><br>
+                  유희<br>
+                  <span style="font-size:0.98em;">각종 점수 컨텐츠 전용 딜러형 전사. 수급 쉬움.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/Fk5Vs8N/bradley.jpg" class="hero-img" alt="브래들리"><br>
+                  브래들리<br>
+                  <span style="font-size:0.98em;">분노 빼앗기 개성. 성능 좋지만 높은 육성 필요.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/tMq80NB/ortega.jpg" class="hero-img" alt="오르테가"><br>
+                  오르테가<br>
+                  <span style="font-size:0.98em;">3원소 코어. 밀치기+진형 붕괴로 쓸만, 필살기 쓸수록 강해짐.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/Fk5gwf1/milla.jpg" class="hero-img" alt="밀라"><br>
+                  밀라<br>
+                  <span style="font-size:0.98em;">3원소 코어. 오르테가보다 강하나 수급 어려움, 키우면 딜 보장.</span>
+                </div>
+              </td>
+              <td>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/vvgJ8w8/Cadelly.jpg" class="hero-img" alt="카델리"><br>
+                  카델리<br>
+                  <span style="font-size:0.98em;">유희처럼 수급하긴 쉬우나 활용처가 애매.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/1JwH1QV/Hera.jpg" class="hero-img" alt="해라"><br>
+                  해라<br>
+                  <span style="font-size:0.98em;">마법사 포지션이지만 탱커. 특유의 '밀리지 않음-호불호 갈림'.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/hxPqgHJ/Seisou.jpg" class="hero-img" alt="세이소우"><br>
+                  세이소우<br>
+                  <span style="font-size:0.98em;">성능은 유나와 비슷. 둘중 더 잘 나오는걸 키워라.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/tpwYwyd/Sanako.jpg" class="hero-img" alt="사나코"><br>
+                  사나코<br>
+                  <span style="font-size:0.98em;">초반 딜탱으로 탁월, 후반 가면 힘이 빠짐.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/nMYdJLK/Kuroi.jpg" class="hero-img" alt="쿠로이"><br>
+                  쿠로이<br>
+                  <span style="font-size:0.98em;">시작부터 후열 저격. 주요 딜러 처리와 범위기 차단 역할.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/b50g0Dc/Petria.jpg" class="hero-img" alt="페트리아"><br>
+                  페트리아<br>
+                  <span style="font-size:0.98em;">불속 힐러. 도트힐이라 급한 상황에서 부족.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/gMNZ675/Sena.jpg" class="hero-img" alt="세나"><br>
+                  세나<br>
+                  <span style="font-size:0.98em;">회피형 탱커. 초반엔 애매, 키우면 진가 발휘.</span>
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/5WVpKx6/Balla.jpg" class="hero-img" alt="발라"><br>
+                  발라<br>
+                  <span style="font-size:0.98em;">힐+공격/흡혈 버프, 3원소 중 버프로는 탑급 힐러.</span>
+                </div>
+              </td>
+              <td>
+                <div style="margin-bottom:7px; color:#7a4fe7; font-weight:700; font-size:1em;">
+                  전캐릭 공통 : 원소탑, 경지회전, 진영시련 등 특정 속성 채우기 조건용
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/V0DBLYy/Libia.jpg" class="hero-img" alt="리비아"><br>
+                  리비아
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/YBDnTSC/Nereis.jpg" class="hero-img" alt="네레이스"><br>
+                  네레이스
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/cXtkxbn/Yuna.jpg" class="hero-img" alt="유나"><br>
+                  유나
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/5ggGGsB/Maegu.jpg" class="hero-img" alt="매구"><br>
+                  매구
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/DPcFN3x/Gulbeig.jpg" class="hero-img" alt="굴베이그"><br>
+                  굴베이그
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/zhJNj6C/Albeil.jpg" class="hero-img" alt="알베일"><br>
+                  알베일
+                </div>
+              </td>
+              <td>
+                <div style="margin-bottom:7px; color:#d5466b; font-weight:700; font-size:1em;">
+                  전캐릭 공통 : 육성 가치 X
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/JSmpms5/Milenny.jpg" class="hero-img" alt="밀레니"><br>
+                  밀레니
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/gM2Y4wg/Silacia.jpg" class="hero-img" alt="실라시아"><br>
+                  실라시아
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/My0x1jn/Hibiki.jpg" class="hero-img" alt="히비키 아에"><br>
+                  히비키 아에
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/HDy0kWs/Lengetsu.jpg" class="hero-img" alt="렌게츠"><br>
+                  렌게츠
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/qYMps5M/Young-Maegu.jpg" class="hero-img" alt="어린 매구"><br>
+                  어린 매구
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/Q3w7JT1/Bahamut.jpg" class="hero-img" alt="바하무트"><br>
+                  바하무트
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/yFz5Qpp/Bonair.jpg" class="hero-img" alt="보네어"><br>
+                  보네어
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/3mmfv8G/Daisy.jpg" class="hero-img" alt="데이지"><br>
+                  데이지
+                </div>
+                <div class="hero-cell">
+                  <img src="https://i.ibb.co/twMrtZB/Yeongsil.jpg" class="hero-img" alt="영실"><br>
+                  영실
+                </div>
+              </td>
+              <td>
+                <!-- 미출시 캐릭터 필요시 여기에 추가 -->
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- 초반 육성 공략 -->
+      <div class="section">
+        <h2>초반 육성 공략</h2>
+        <div class="guide-card" style="text-align:center; color:#7a4fe7; font-size:1.13em; font-weight:700;">
+          🚧 <b>지금 곧 업데이트 예정입니다!</b> 조금만 기다려주세요.
+        </div>
+      </div>
+      <!-- 룬 추천 -->
+      <div class="section">
+        <h2>룬 추천</h2>
+        <div class="guide-card" style="text-align:center;">
+          <div style="color:#7a4fe7; font-weight:700; font-size:1.08em; margin-bottom:9px;">딜러 추천</div>
+          <div style="margin-bottom:7px;">조화, 신력, 부러진검, 치명타, 맹공, 흡수, 관통, 가속</div>
+          <div style="color:#2d5ea7; font-weight:700; font-size:1.08em; margin:12px 0 7px 0;">탱커 추천</div>
+          <div style="margin-bottom:7px;">반석, 강체, 수호, 가속, 피해면역</div>
+          <div style="color:#e285af; font-weight:700; font-size:1.08em; margin:12px 0 7px 0;">힐러 추천</div>
+          <div style="margin-bottom:7px;">반석, 치유, 정화, 제거, 강체, 가속</div>
+          <div style="margin-top:15px; color:#e23668; font-size:1.09em; font-weight:600; border-top:1px solid #dfd5f6; padding-top:6px;">
+            * 절대 다이아로 구매하지 말 것
+          </div>
+        </div>
+      </div>
+      <!-- 초보/뉴비 패키지 추천 -->
+      <div class="section">
+        <h2>📣 초보 또는 뉴비를 위한 패키지 추천</h2>
+        <button class="accordion">빠른 자동 전투 패키지 (필수)</button>
+        <div class="panel">
+          필수 아이템과 자동 사냥에 필요한 패키지입니다.
+        </div>
+        <button class="accordion">관문 투자 패키지</button>
+        <div class="panel">
+          관문 단계별 클리어를 위한 주요 투자 패키지 안내.
+        </div>
+        <button class="accordion">황실 패스</button>
+        <div class="panel">
+          황실 패스 보상과 활용법, 시즌별 추천 점수 달성법.
+        </div>
+        <button class="accordion">일간 패키지 일괄 구매 (어느 정도 과금한다면 매일)</button>
+        <div class="panel">
+          매일 반복 구매하여 성장 가속화하는 전략입니다.
+        </div>
+        <button class="accordion">서버 오픈 특가 패키지 1,500원~45,000원</button>
+        <div class="panel">
+          본인 지갑 상태에 따라 구매하시고, 핵과금러는 149,000원까지 전부 다 사는 걸 추천합니다.
+        </div>
+        <button class="accordion">30,000원 투자 & 76,000원 투자</button>
+        <div class="panel">
+          본인 지갑 상태에 따라 구매 유무를 결정하시면 됩니다.
+        </div>
+      </div>
+      <!-- 덱 구성 공략 -->
+      <div class="section">
+        <h2>덱 구성 공략</h2>
+        <div class="guide-card" style="text-align:center; color:#7a4fe7; font-size:1.13em; font-weight:700;">
+          🚧 <b>곧 공략이 추가될 예정입니다.</b>
+        </div>
+      </div>
+      <!-- 자원수급 공략 -->
+      <div class="section">
+        <h2>자원수급 공략</h2>
+        <div class="guide-card" style="text-align:center; color:#7a4fe7; font-size:1.13em; font-weight:700;">
+          🚧 <b>조만간 최신 정보가 올라올 예정입니다.</b>
+        </div>
+      </div>
+      <!-- 이벤트 공략 -->
+      <div class="section">
+        <h2>이벤트 공략</h2>
+        <div class="guide-card" style="text-align:center; color:#7a4fe7; font-size:1.13em; font-weight:700;">
+          🚧 <b>신규 이벤트와 꿀팁은 곧 업데이트됩니다.</b>
+        </div>
+      </div>
+      <!-- 단톡방 바로가기 -->
+      <div class="section">
+        <h2>단톡방 바로가기</h2>
+        <div class="guide-chat">
+          <span class="tag">카카오톡</span>
+          <a href="https://open.kakao.com/o/gH92FSFh" target="_blank" rel="noopener">오픈채팅 바로가기</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    function showSection(idx) {
+      document.querySelectorAll('.sidebar button').forEach((btn, i) =>
+        btn.classList.toggle('active', i === idx)
+      );
+      document.querySelectorAll('.section').forEach((sec, i) =>
+        sec.classList.toggle('active', i === idx)
+      );
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const accs = document.querySelectorAll('.accordion');
+      accs.forEach(acc => {
+        acc.addEventListener('click', () => {
+          acc.classList.toggle('active');
+          const panel = acc.nextElementSibling;
+          panel.classList.toggle('show');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
